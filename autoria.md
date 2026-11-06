@@ -8,7 +8,7 @@
 > con comentarios en el código fuente. La omisión de fuentes puede considerarse plagio.
 
 ## Ejercicio 6
-- Implementación íntegramente propia, sin fuentes externas.
+- Implementación íntegramente propia, sin fuentes externas. Solo usamos Chat GPT para ayudarnos con la redacción de la justificación. 
 
 ## Ejercicio 7
 - Implementación íntegramente propia, sin fuentes externas.

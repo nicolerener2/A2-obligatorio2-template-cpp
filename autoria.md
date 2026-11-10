@@ -11,8 +11,9 @@
 - Implementación íntegramente propia, sin fuentes externas. Solo usamos Chat GPT para ayudarnos con la redacción de la justificación. 
 
 ## Ejercicio 7
-- Utilicé como base el código del ejemplo "Encontrar mínimo", incluido en la diapositiva 6 de 16 del material "8. DAC" del curso.
-- Implementación íntegramente propia, sin fuentes externas.
+- Utilicé como base el código del ejemplo «Encontrar mínimo» y el de MergeSort, incluidos en las diapositivas 6 y 12 de 16, respectivamente, del material «8. DAC» del curso.
+- Utilicé ChatGPT para comprender el funcionamiento de MergeSort y su adecuación al problema, también para ayudarme en la redacción.
+- Adapté el código de clase.
 
 ## Ejercicio 8
 - Implementación íntegramente propia, sin fuentes externas.

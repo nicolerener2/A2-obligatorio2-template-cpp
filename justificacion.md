@@ -13,7 +13,8 @@
 - Estrategia greedy: usamos todos los pares para maximizar la cantidad de placas, colocando los valores más granddes en los extremos y el mayor sobrante en el centro para obtener el cartel lexicográficamente mayor.
 
 ## Ejercicio 7
-- Sin restricciones de órdenes. / Justificación: ...
+- Tiempo O(N log N): utilizamos dividir y conquistar mediante un merge sort modificado. En cada llamada dividimos el arreglo en dos mitades, contamos las remontadas entre ellas usando dos índices que solo avanzan y las intercalamos ordenadas. El trabajo por nivel es O(N) y hay O(log N) niveles, por lo que el tiempo total es O(N log N) en el peor caso.
+- Espacio O(N): los arreglos auxiliares se liberan después de intercalar. Los tamaños de los arreglos que existen simultáneamente suman O(N). La pila de recursión ocupa O(log N), por lo que el espacio total es O(N).
 
 ## Ejercicio 8
 - Sin restricciones de órdenes. / Justificación: ...

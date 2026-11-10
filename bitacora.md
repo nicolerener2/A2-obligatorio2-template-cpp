@@ -32,6 +32,15 @@ Comencé el ejercicio 7 pensando en guardar los dorsales en un arreglo y compara
 
 Usé como base el ejemplo de encontrar el mínimo de las diapositivas para implementar la división y las llamadas recursivas. Elegí un merge sort modificado porque permite ordenar las mitades y contar las remontadas entre ellas eficientemente.
 
-Creé un array con num + 1 posiciones para representar la llegada desde el índice 1; hay que ajustar los límites para no procesar la posición 0. También usé long long en la función y los contadores porque el resultado puede superar los 32 bits.
+Creé un array con num + 1 posiciones para representar la llegada desde el índice 1, hay que ajustar los límites para no procesar la posición 0. También usé long long en la función y los contadores porque el resultado puede superar los 32 bits.
 
 Consulté ChatGPT para revisar la estrategia y detectar errores de índices y tipos. Todavía queda implementar la parte clave: contar las remontadas entre mitades, fusionarlas ordenadas y probar la solución.
+
+## 2026-11-10 (de tarde) - Nicole Rener 
+Continué con el ejercicio 7 e intenté contar las remontadas entre mitades usando un doble for en cant. Aunque permitía revisar los pares, el tiempo quedaba en O(N²), incumpliendo la restricción.
+
+Me dí cuenta que capaz lo mejor era ordenar las mitades para evitar recorrer innecesariamente los mismos elementos. Con ambas ordenadas, puedo contar usando dos índices y avanzar por la derecha sin volver al principio para cada elemento izquierdo.
+
+Finalmente cambié casi toda la implementación: dejé de usar como base el ejemplo "Encontrar mínimo" y adapté el código de merge sort de clase. Incorporé el conteo antes de intercalar las mitades y utilicé un contador long long por referencia para acumular las remontadas.
+
+Consulté ChatGPT para comprender mejor el merge sort. Queda pendiente ejecutar las pruebas para verificar la solución.

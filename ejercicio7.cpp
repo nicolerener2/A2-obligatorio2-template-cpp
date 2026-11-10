@@ -5,24 +5,52 @@
 
 using namespace std;
 
-int* copiar(int* array, int inicio, int fin) {
-  int* copia = new int[fin - inicio + 1];
-  for(int i = inicio; i <= fin; i++)
-    copia[i - inicio] = array[i];
-  return copia;
+int* intercalar(int* arr1, int* arr2, int n1, int n2) {
+  int* ret = new int[n1 + n2];
+
+  int i = 0, j = 0, k = 0;
+  while (i < n1 && j < n2) {
+    if (arr1[i] < arr2[j]) {
+      ret[k++] = arr1[i++];
+    } else {
+      ret[k++] = arr2[j++];
+    }
+  }
+
+  while (i < n1) {
+    ret[k++] = arr1[i++];
+  }
+
+  while (j < n2) {
+    ret[k++] = arr2[j++];
+  }
+
+  return ret;
 }
 
-long long cant(int* array, int tam) {
-    if (tam <= 1) return 0;
-    
-    int mitad = (tam) / 2;
-    int* copia1 = copiar(array, 0, mitad-1);
-    int* copia2 = copiar(array, mitad, tam-1);
-    long long cant1 = cant(copia1, mitad);
-    long long cant2 = cant(copia2, tam - mitad);
-    delete[] copia1;
-    delete[] copia2;
-    return cant1+cant2;
+int* mergeSort(int* array, int inicio, int fin, long long& remontadas){
+  if(inicio == fin){
+    int* ret = new int[1];
+    ret[0] = array[inicio];
+    return ret;
+  }
+  int mitad = (inicio + fin) / 2;
+
+  int* ord1 = mergeSort(array, inicio, mitad, remontadas);
+  int* ord2 = mergeSort(array, mitad + 1, fin, remontadas);
+  int n1= mitad-inicio+1;
+  int n2=fin-mitad;
+  int j = 0;
+for (int i = 0; i < n1; i++) {
+    while (j < n2 && ord1[i] > 2 * ord2[j]) {
+        j++;
+    }
+    remontadas += j;
+}
+  int* resultado=intercalar(ord1, ord2, n1,n2);
+  delete[] ord1;
+  delete[] ord2;
+  return resultado;
 }
 
 int main(){
@@ -34,16 +62,15 @@ int main(){
         cin>>pos;
         array[i]=pos;
     }
-    long long respuesta= cant(array, num+1);
+    long long respuesta= 0;
+    int* ordenado= mergeSort(array,1,num,respuesta);
     cout << respuesta << "\n";
+    delete[] ordenado;
     delete[] array;
     return 0;
 }
 
-// por cada elemento hay que revisr todo los siguientes, podria guardar en un array para guardar los datos
-// puedo usar dividr y conquistar dividiendo el array en la mitad y evaluando cada mitad
 // porque mergesort?
-// use el coidgo de las diapos como base (el ejemplo de encontrar minimo)
-// usamos long long para la funcon porque la letra dcie que La cantidad de remontadas épicas puede superar el rango de un entero de 32 bits.
-// esxplicar como decide que sort use 
-// el array lo creo en num+1 asi cada pos corresponde a la pos que llegaron (no uso el 0)
+// quise hacer doble for en cant pero se me iba el orden a n a la dos
+// se me ocurrio ordenar los arrays asi no recorro despues el arreglo inncesariamente
+// cambie mucho, use como base el codigo de merge sorte ne vez del ejemplo de "Encontrar mínimo"

@@ -11,6 +11,7 @@
 - Implementación íntegramente propia, sin fuentes externas. Solo usamos Chat GPT para ayudarnos con la redacción de la justificación. 
 
 ## Ejercicio 7
+- Utilicé como base el código del ejemplo "Encontrar mínimo", incluido en la diapositiva 6 de 16 del material "8. DAC" del curso.
 - Implementación íntegramente propia, sin fuentes externas.
 
 ## Ejercicio 8

@@ -69,8 +69,3 @@ int main(){
     delete[] array;
     return 0;
 }
-
-// porque mergesort?
-// quise hacer doble for en cant pero se me iba el orden a n a la dos
-// se me ocurrio ordenar los arrays asi no recorro despues el arreglo inncesariamente
-// cambie mucho, use como base el codigo de merge sorte ne vez del ejemplo de "Encontrar mínimo"
